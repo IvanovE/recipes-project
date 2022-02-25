@@ -21,7 +21,24 @@
     "extends": [
       "react-app",
       "react-app/jest"
-    ]
+    ],
+    "rules": {
+      "semi": [
+        "warn",
+        "always"
+      ],
+      "indent": [
+        "warn",
+        4,
+        { "MemberExpression": 1 }
+      ],
+      "react/jsx-indent": [
+        1,
+        4,
+        {"checkAttributes": true, "indentLogicalExpressions": true}
+      ],
+      "object-curly-spacing": ["warn", "always"]
+    }
   },
   "browserslist": {
     "production": [
@@ -34,5 +51,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "eslint": "^8.0.0",
+    "eslint-config-react-app": "^7.0.0",
+    "eslint-plugin-react": "^7.29.0"
   }
 }
