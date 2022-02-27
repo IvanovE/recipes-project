@@ -1,0 +1,61 @@
+@import '../../constants/variables'
+
+.img
+  background-image: url("../../img/welcome-image.jpg")
+  background-position-y: center
+  background-size: cover
+  width: 100%
+  height: 80vh
+  display: flex
+  align-items: center
+  justify-content: center
+  border-bottom: $section-border
+
+.title
+  text-align: center
+  background-color: rgba(17, 17, 17, 0.9)
+  padding: 4rem
+  border-radius: 0.4rem
+  width: 50%
+
+.section
+  display: flex
+  align-items: center
+  justify-content: space-between
+  padding: 3rem
+  border-bottom: $section-border
+  background-color: $primary-background-color
+
+  img
+    width: 48%
+    border-radius: 0.4rem
+
+.text
+  text-align: center
+  padding: 2rem
+
+
+.reversed
+  flex-direction: row-reverse
+
+@media (max-width: 768px)
+  .title
+    padding: 3rem
+
+  .section
+    display: block
+    padding: 2rem
+
+    img
+      display: block
+      margin: 0 auto
+      width: 75%
+
+  .text
+    padding: 0
+    margin-bottom: 2rem
+
+@media (max-width: 576px)
+  .title
+    border-radius: 0
+    width: 100%

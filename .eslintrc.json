@@ -1,0 +1,28 @@
+{
+  "extends": "react-app",
+  "rules": {
+    "semi": [
+      "warn",
+      "always"
+    ],
+    "indent": [
+      "warn",
+      4,
+      {
+        "MemberExpression": 1
+      }
+    ],
+    "react/jsx-indent": [
+      1,
+      4,
+      {
+        "checkAttributes": true,
+        "indentLogicalExpressions": true
+      }
+    ],
+    "object-curly-spacing": [
+      "warn",
+      "always"
+    ]
+  }
+}
