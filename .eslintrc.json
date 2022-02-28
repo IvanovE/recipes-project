@@ -9,8 +9,10 @@
       "warn",
       4,
       {
-        "MemberExpression": 1
+        "MemberExpression": 1,
+        "SwitchCase": 1
       }
+
     ],
     "react/jsx-indent": [
       1,

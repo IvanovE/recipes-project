@@ -12,12 +12,12 @@ export const Header = () => {
             </NavLink>
             <ul className={styles.nav}>
                 <li>
-                    <NavLink activeClassName={styles.active} to={'#'}>
+                    <NavLink to={'#'}>
                         <Typography.Regular className={styles.link}>{TEXT.recipes}</Typography.Regular>
                     </NavLink>
                 </li>
                 <li>
-                    <NavLink to={'#'}>
+                    <NavLink to={'/categories'}>
                         <Typography.Regular className={styles.link}>{TEXT.categories}</Typography.Regular>
                     </NavLink>
                 </li>

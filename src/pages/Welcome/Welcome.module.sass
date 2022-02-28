@@ -9,7 +9,7 @@
   display: flex
   align-items: center
   justify-content: center
-  border-bottom: $section-border
+  border-bottom: $border
 
 .title
   text-align: center
@@ -22,21 +22,26 @@
   display: flex
   align-items: center
   justify-content: space-between
-  padding: 3rem
-  border-bottom: $section-border
-  background-color: $primary-background-color
+  text-align: center
+  padding: 3rem 6rem
+  border-bottom: $border
 
-  img
-    width: 48%
-    border-radius: 0.4rem
+.section:last-child
+  border-bottom: 0
+
+img
+  width: 48%
+  border-radius: 0.4rem
 
 .text
-  text-align: center
-  padding: 2rem
-
+  padding: 0 2rem 0 0
 
 .reversed
   flex-direction: row-reverse
+
+.reversed > .text
+  padding: 0 0 0 2rem
+
 
 @media (max-width: 768px)
   .title

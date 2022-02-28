@@ -1,22 +1,25 @@
 import { Route, Switch } from 'react-router-dom';
+import { Layout } from "./Layout/Layout/Layout";
 import { Welcome } from './pages/Welcome/Welcome';
-import { Header } from "./components/Header/Header";
-import { Footer } from "./components/Footer/Footer";
+import { Categories } from "./pages/Categories/Categories";
+import { Category } from "./pages/Category/Category";
 
 
 function App() {
     return (
-        <>
-            <Header />
-            <main>
-                <Switch>
-                    <Route exact path={"/"}>
-                        <Welcome />
-                    </Route>
-                </Switch>
-            </main>
-            <Footer />
-        </>
+        <Layout>
+            <Switch>
+                <Route exact path={"/"}>
+                    <Welcome />
+                </Route>
+                <Route exact path={"/categories"}>
+                    <Categories />
+                </Route>
+                <Route exact path={"/categories/:categoryName"}>
+                    <Category />
+                </Route>
+            </Switch>
+        </Layout>
     );
 }
 
