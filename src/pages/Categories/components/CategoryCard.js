@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 export const CategoryCard = ({ title, imageURL, description }) => {
     return (
-        <Link className={styles.card} to={`/categories/${title}`}>
+        <Link className={styles.card} to={`/categories/${title.toLowerCase()}`}>
             <div className={styles.header}>
                 <img src={imageURL} alt="Category dish"/>
                 <Typography.Title>{title}</Typography.Title>
