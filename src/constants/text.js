@@ -1,6 +1,5 @@
 export const TEXT = {
     categories: 'Categories',
-    recipes: 'Recipes',
     randomRecipe: 'Random Recipe',
     welcomeTitle: 'Cooking is an art subject only to true people who appreciate delicious food',
     welcomeSection1: 'Cooking is the greatest art in the world. It is more important than painting. ' +
@@ -10,5 +9,11 @@ export const TEXT = {
         'to recipes from ancient cookbooks.',
     welcomeSection3: 'Cooking is like love: you either need to plunge into it with your head, or not dive at all.',
     footerTitle: 'Thank you for trusting us with your meals. We value every visitor to our site and try to ' +
-        'update recipes as quickly as possible.'
+        'update recipes as quickly as possible.',
+    category: 'Category: ',
+    name: 'Name:',
+    area: 'Area:',
+    tags: 'Tags:',
+    ingredients: 'Ingredients',
+    instructions: 'Instructions'
 };

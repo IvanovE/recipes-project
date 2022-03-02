@@ -1,10 +1,11 @@
 import styles from './Categories.module.sass';
 import useFetch from 'use-http';
-import { CategoryCard } from "./components/CategoryCard";
+import { CategoriesCard } from "./components/CategoriesCard";
+import { URLS } from "../../api/urls";
 
 export const Categories = () => {
     const { loading, error, data } = useFetch(
-        'https://www.themealdb.com/api/json/v1/1/categories.php',
+        URLS.Categories(),
         {},
         []);
 
@@ -14,14 +15,13 @@ export const Categories = () => {
             {error && <div>ERROR</div>}
 
             {!loading && !error && data.categories.map(category => {
-                return <CategoryCard
+                return <CategoriesCard
                     key={category["idCategory"]}
                     title={category["strCategory"]}
                     imageURL={category["strCategoryThumb"]}
                     description={category["strCategoryDescription"]}
                 />;
-            }
-            )}
+            })}
         </div>
     );
 };

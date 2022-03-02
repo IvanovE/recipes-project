@@ -1,0 +1,19 @@
+@import '../../../constants/variables'
+@import '../../../constants/mixins'
+
+.card
+  @include card
+
+  &:hover
+    @include card-hover
+
+.header
+  display: flex
+  justify-content: space-around
+  align-items: center
+  margin-bottom: 1.5rem
+  padding: 0.6rem
+  border-bottom: 0.3rem solid #222
+
+.header img
+  width: 50%
