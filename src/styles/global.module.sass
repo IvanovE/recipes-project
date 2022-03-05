@@ -1,0 +1,25 @@
+@import './variables'
+
+.header
+  padding: $padding-lg
+
+.container
+  padding: $padding-lg
+
+@media (max-width: 992px)
+  .header
+    padding: $padding-md
+  .container
+    padding: $padding-md
+
+@media (max-width: 768px)
+  .header
+    padding: $padding-sm
+  .container
+    padding: $padding-sm
+
+@media (max-width: 576px)
+  .header
+    padding: $padding-xs
+  .container
+    padding: $padding-xs

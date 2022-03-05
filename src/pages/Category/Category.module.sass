@@ -1,11 +1,13 @@
+@import '../../styles/variables'
+
 .container
   display: grid
-  padding: 3rem
-  grid-template-columns: repeat(auto-fill, minmax(500px, 1fr))
+  grid-template-columns: repeat(auto-fill, minmax(450px, 1fr))
   gap: 1.5rem
 
-a
-  text-decoration: none
+.breadcrumbs
+  margin-bottom: $breadcrumbs-mb-lg
+
 
 @media (max-width: 1200px)
   .container
@@ -18,3 +20,7 @@ a
 @media (max-width: 768px)
   .container
     grid-template-columns: repeat(1, 1fr)
+
+@media (max-width: 576px)
+  .breadcrumbs
+    margin-bottom: $breadcrumbs-mb-xs

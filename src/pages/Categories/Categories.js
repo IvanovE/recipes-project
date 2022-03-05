@@ -2,6 +2,7 @@ import styles from './Categories.module.sass';
 import useFetch from 'use-http';
 import { CategoriesCard } from "./components/CategoriesCard";
 import { URLS } from "../../api/urls";
+import { Breadcrumbs } from "../../UI/Breadcrumbs/Breadcrumbs";
 
 export const Categories = () => {
     const { loading, error, data } = useFetch(
@@ -9,19 +10,33 @@ export const Categories = () => {
         {},
         []);
 
-    return (
-        <div className={styles.container}>
-            {loading && <div>Loading</div>}
-            {error && <div>ERROR</div>}
+    const breadcrumbArr = [
+        {
+            title: 'Categories',
+            url: '/categories'
+        }
+    ];
 
-            {!loading && !error && data.categories.map(category => {
-                return <CategoriesCard
-                    key={category["idCategory"]}
-                    title={category["strCategory"]}
-                    imageURL={category["strCategoryThumb"]}
-                    description={category["strCategoryDescription"]}
-                />;
-            })}
-        </div>
+    return (
+        <>
+            {loading && <div>Loading</div>}
+            {error && <div>Error</div>}
+
+            {!loading && !error &&
+                <>
+                    <Breadcrumbs breadcrumbArr={breadcrumbArr} className={styles.breadcrumbs}/>
+                    <div className={styles.container}>
+                        {data.categories.map(category => {
+                            return <CategoriesCard
+                                key={category["idCategory"]}
+                                title={category["strCategory"]}
+                                imageURL={category["strCategoryThumb"]}
+                                description={category["strCategoryDescription"]}
+                            />;
+                        })}
+                    </div>
+                </>
+            }
+        </>
     );
 };

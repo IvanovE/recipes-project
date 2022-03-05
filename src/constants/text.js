@@ -15,5 +15,6 @@ export const TEXT = {
     area: 'Area:',
     tags: 'Tags:',
     ingredients: 'Ingredients',
-    instructions: 'Instructions'
+    instructions: 'Instructions',
+    breadcrumbsSeparator: '›'
 };

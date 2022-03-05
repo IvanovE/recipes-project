@@ -4,6 +4,7 @@ import { Welcome } from './pages/Welcome/Welcome';
 import { Categories } from "./pages/Categories/Categories";
 import { Category } from "./pages/Category/Category";
 import { RecipeDetail } from "./pages/RecipeDetail/RecipeDetail";
+import { Header } from "./Layout/Header/Header";
 
 
 function App() {

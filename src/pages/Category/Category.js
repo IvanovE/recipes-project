@@ -3,6 +3,7 @@ import useFetch from "use-http";
 import { useParams } from "react-router-dom";
 import { CategoryCard } from "./components/CategoryCard";
 import { URLS } from "../../api/urls";
+import { Breadcrumbs } from "../../UI/Breadcrumbs/Breadcrumbs";
 
 export const Category = () => {
     const { categoryName } = useParams();
@@ -12,20 +13,33 @@ export const Category = () => {
         {},
         []);
 
+    const breadcrumbArr = [
+        {
+            title: 'Categories',
+            url: `/categories`
+        },
+        {
+            title: categoryName,
+            url: `/categories/${categoryName}`
+        }
+    ];
+
     return (
-        <div className={styles.container}>
+        <>
             {loading && <div>Loading</div>}
             {error && <div>ERROR</div>}
-
-            {!loading && !error && data.meals.map(meal => {
-                return <CategoryCard
-                    key={meal["idMeal"]}
-                    id={meal["idMeal"]}
-                    category={categoryName}
-                    title={meal["strMeal"]}
-                    imageURL={meal["strMealThumb"]}
-                />;
-            })}
-        </div>
+            <Breadcrumbs breadcrumbArr={breadcrumbArr} className={styles.breadcrumbs} />
+            <div className={styles.container}>
+                {!loading && !error && data.meals.map(meal => {
+                    return <CategoryCard
+                        key={meal["idMeal"]}
+                        id={meal["idMeal"]}
+                        category={categoryName}
+                        title={meal["strMeal"]}
+                        imageURL={meal["strMealThumb"]}
+                    />;
+                })}
+            </div>
+        </>
     );
 };
