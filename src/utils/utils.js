@@ -1,3 +1,6 @@
+import cn from "classnames";
+import globalStyles from "../styles/global.module.sass";
+
 export const transformIngredients = (data) => {
     const transformedData = [];
     for (let i = 1; i <= 20; i++) {
@@ -19,4 +22,14 @@ export const transformedVideoUrl = (URL) => {
         return URL.split('watch?v=').join('embed/');
     }
     return null;
+};
+
+export const skeletonDivArray = (count, className) => {
+    const arr = [];
+    for (let i = 0; i < count; i++) {
+        arr.push(
+            <div key={i} className={cn(globalStyles.skeleton, globalStyles["skeleton-text"], className)} />
+        );
+    }
+    return arr;
 };

@@ -1,8 +1,10 @@
 import styles from './Categories.module.sass';
 import useFetch from 'use-http';
-import { CategoriesCard } from "./components/CategoriesCard";
+import { CategoriesCard } from "./components/CategoriesCard/CategoriesCard";
 import { URLS } from "../../api/urls";
 import { Breadcrumbs } from "../../UI/Breadcrumbs/Breadcrumbs";
+import { CategoriesSkeleton } from "./components/CategoriesSkeleton/CategoriesSkeleton";
+import { Error } from "../../components/Error/Error";
 
 export const Categories = () => {
     const { loading, error, data } = useFetch(
@@ -19,12 +21,18 @@ export const Categories = () => {
 
     return (
         <>
-            {loading && <div>Loading</div>}
-            {error && <div>Error</div>}
+            <Breadcrumbs breadcrumbArr={breadcrumbArr} className={styles.breadcrumbs}/>
+
+            {loading &&
+                <div className={styles.container}>
+                    <CategoriesSkeleton count={30} />
+                </div>
+            }
+
+            {error && <Error />}
 
             {!loading && !error &&
                 <>
-                    <Breadcrumbs breadcrumbArr={breadcrumbArr} className={styles.breadcrumbs}/>
                     <div className={styles.container}>
                         {data.categories.map(category => {
                             return <CategoriesCard

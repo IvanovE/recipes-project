@@ -1,8 +1,7 @@
 import styles from './Recipe.module.sass';
-import { Typography } from "../../../typography/Typography";
-import { TEXT } from "../../../constants/text";
-import { transformedVideoUrl, transformIngredients } from "../../../utils/utils";
-import cn from 'classnames';
+import { Typography } from "../../../../typography/Typography";
+import { TEXT } from "../../../../constants/text";
+import { transformedVideoUrl, transformIngredients } from "../../../../utils/utils";
 
 export const Recipe = ({ data }) => {
     const recipeInfo = data.meals[0];
@@ -17,7 +16,7 @@ export const Recipe = ({ data }) => {
         <>
             <div className={styles.header}>
                 <img src={recipeInfo.strMealThumb} alt="Meal" />
-                <ul className={cn(styles.list, styles.marks)}>
+                <ul className={styles.marks}>
                     <li><Typography.Subtitle>{TEXT.category} {recipeInfo.strCategory}</Typography.Subtitle></li>
                     <li><Typography.Subtitle>{TEXT.name} {recipeInfo.strMeal}</Typography.Subtitle></li>
                     <li><Typography.Subtitle>{TEXT.area} {recipeInfo.strArea}</Typography.Subtitle></li>
@@ -28,7 +27,7 @@ export const Recipe = ({ data }) => {
             <div className={styles.info}>
                 <div className={styles.ingredients}>
                     <Typography.Subtitle className={styles.mb}>{TEXT.ingredients}</Typography.Subtitle>
-                    <ul className={cn(styles.list, styles.text)}>
+                    <ul>
                         {transformedIngredients.map((ingredient, index) =>
                             <li key={index}>
                                 <Typography.Regular>

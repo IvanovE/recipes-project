@@ -1,0 +1,66 @@
+@import '../../styles/variables'
+
+.container
+  position: relative
+  display: flex
+  justify-content: center
+  align-items: center
+  width: 80px
+  cursor: pointer
+  transition: all .5s ease-in-out
+
+.menu
+  width: 50px
+  height: 6px
+  border-radius: 5px
+  background-color: #ffffff
+  box-shadow: 0 2px 5px rgba(255, 101, 47, .2)
+  transition: all .5s ease-in-out
+
+.menu::before,
+.menu::after
+  content: ''
+  position: absolute
+  width: 50px
+  height: 6px
+  background-color: #ffffff
+  border-radius: 5px
+  box-shadow: 0 2px 5px rgba(255, 101, 47, .2)
+  transition: all .5s ease-in-out
+
+.menu::before
+  transform: translateY(-16px)
+
+.menu::after
+  transform: translateY(16px)
+
+.container.open .menu
+  transform: translateX(-50px)
+  background-color: transparent
+  box-shadow: none
+
+.container.open .menu::before
+  transform: rotate(45deg) translate(35px, -35px)
+
+.container.open .menu::after
+  transform: rotate(-45deg) translate(35px, 35px)
+
+.nav
+  display: flex
+  padding: $padding-sm
+  position: fixed
+  z-index: 20
+  flex-flow: column
+  height: 100%
+  width: 100%
+  background-color: #2a2a2a
+  overflow-y: auto
+  right: -100%
+  top: $header-height
+  transition: right 0.5s ease-in-out
+
+.nav a
+  margin-bottom: 2rem
+
+.container.open .nav
+  right: 0

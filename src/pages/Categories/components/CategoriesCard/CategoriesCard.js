@@ -1,5 +1,5 @@
 import styles from './CategoriesCard.module.sass';
-import { Typography } from "../../../typography/Typography";
+import { Typography } from "../../../../typography/Typography";
 import { Link } from "react-router-dom";
 
 export const CategoriesCard = ({ title, imageURL, description }) => {

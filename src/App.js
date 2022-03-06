@@ -1,11 +1,10 @@
 import { Route, Switch } from 'react-router-dom';
-import { Layout } from "./Layout/Layout/Layout";
+import { Layout } from "./layout/Layout/Layout";
 import { Welcome } from './pages/Welcome/Welcome';
 import { Categories } from "./pages/Categories/Categories";
 import { Category } from "./pages/Category/Category";
 import { RecipeDetail } from "./pages/RecipeDetail/RecipeDetail";
-import { Header } from "./Layout/Header/Header";
-
+import { Error } from "./components/Error/Error";
 
 function App() {
     return (
@@ -22,6 +21,9 @@ function App() {
                 </Route>
                 <Route exact path={"/categories/:categoryName/:idMeal"}>
                     <RecipeDetail />
+                </Route>
+                <Route path={"*"}>
+                    <Error />
                 </Route>
             </Switch>
         </Layout>

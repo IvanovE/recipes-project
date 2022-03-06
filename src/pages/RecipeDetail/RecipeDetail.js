@@ -1,9 +1,11 @@
 import styles from './RecipeDetail.module.sass';
 import useFetch from "use-http";
 import { useParams } from "react-router-dom";
-import { Recipe } from "./components/Recipe";
+import { Recipe } from "./components/Recipe/Recipe";
 import { URLS } from "../../api/urls";
 import { Breadcrumbs } from "../../UI/Breadcrumbs/Breadcrumbs";
+import { RecipeSkeleton } from "./components/RecipeSkeleton/RecipeSkeleton";
+import { Error } from "../../components/Error/Error";
 
 export const RecipeDetail = () => {
     const { idMeal, categoryName } = useParams();
@@ -35,9 +37,12 @@ export const RecipeDetail = () => {
 
     return (
         <>
-            {loading && <div>Loading</div>}
-            {error && <div>ERROR</div>}
             <Breadcrumbs breadcrumbArr={breadcrumbsArr} className={styles.breadcrumbs} />
+
+            {loading && <RecipeSkeleton />}
+
+            {error && <Error />}
+
             {!loading && !error && <Recipe data={data} />}
         </>
     );

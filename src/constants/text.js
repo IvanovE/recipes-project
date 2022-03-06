@@ -16,5 +16,6 @@ export const TEXT = {
     tags: 'Tags:',
     ingredients: 'Ingredients',
     instructions: 'Instructions',
-    breadcrumbsSeparator: '›'
+    breadcrumbsSeparator: '›',
+    error: 'Something went wrong! Sorry for that, try again later!'
 };
