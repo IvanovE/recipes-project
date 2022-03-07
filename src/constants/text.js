@@ -17,5 +17,7 @@ export const TEXT = {
     ingredients: 'Ingredients',
     instructions: 'Instructions',
     breadcrumbsSeparator: '›',
-    error: 'Something went wrong! Sorry for that, try again later!'
+    error: 'Something went wrong! Sorry for that, try again later!',
+    404: '404',
+    notFound: 'This page does not exist!'
 };

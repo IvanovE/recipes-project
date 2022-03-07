@@ -4,28 +4,31 @@ import { Welcome } from './pages/Welcome/Welcome';
 import { Categories } from "./pages/Categories/Categories";
 import { Category } from "./pages/Category/Category";
 import { RecipeDetail } from "./pages/RecipeDetail/RecipeDetail";
-import { Error } from "./components/Error/Error";
+import { NotFound } from "./components/NotFound/NotFound";
+import { ScrollToTop } from "./layout/ScrollToTop";
 
 function App() {
     return (
         <Layout>
-            <Switch>
-                <Route exact path={"/"}>
-                    <Welcome />
-                </Route>
-                <Route exact path={"/categories"}>
-                    <Categories />
-                </Route>
-                <Route exact path={"/categories/:categoryName"}>
-                    <Category />
-                </Route>
-                <Route exact path={"/categories/:categoryName/:idMeal"}>
-                    <RecipeDetail />
-                </Route>
-                <Route path={"*"}>
-                    <Error />
-                </Route>
-            </Switch>
+            <ScrollToTop>
+                <Switch>
+                    <Route exact path={"/"}>
+                        <Welcome />
+                    </Route>
+                    <Route exact path={"/categories"}>
+                        <Categories />
+                    </Route>
+                    <Route exact path={"/categories/:categoryName"}>
+                        <Category />
+                    </Route>
+                    <Route exact path={"/categories/:categoryName/:idMeal"}>
+                        <RecipeDetail />
+                    </Route>
+                    <Route path={"*"}>
+                        <NotFound />
+                    </Route>
+                </Switch>
+            </ScrollToTop>
         </Layout>
     );
 }
