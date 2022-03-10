@@ -1,4 +1,4 @@
-import styles from './RecipeDetail.module.sass';
+import styles from "./RecipeDetail.module.sass";
 import useFetch from "use-http";
 import { useParams } from "react-router-dom";
 import { Recipe } from "./components/Recipe/Recipe";
@@ -6,24 +6,33 @@ import { URLS } from "../../api/urls";
 import { Breadcrumbs } from "../../UI/Breadcrumbs/Breadcrumbs";
 import { RecipeSkeleton } from "./components/RecipeSkeleton/RecipeSkeleton";
 import { Error } from "../../components/Error/Error";
+import { useEffect, useState } from "react";
 
 export const RecipeDetail = () => {
     const { idMeal, categoryName } = useParams();
-    const { loading, error, data } = useFetch(
-        URLS.Recipe(idMeal),
+    const [data, setData] = useState([]);
+    const [title, setTitle] = useState("");
+    const { response, loading, error, get } = useFetch(
+        URLS.Recipe(),
         {},
         []
     );
 
-    let title = '';
-    if (!loading && !error) {
-        title = data.meals[0].strMeal;
-    }
+    useEffect(() => {
+        (async function fetchData() {
+            const fetchedData = await get(`?i=${idMeal}`);
+            const transformedData = fetchedData.meals[0];
+            if (response.ok) {
+                setData(transformedData);
+            }
+            setTitle(transformedData.strMeal);
+        })();
+    }, [idMeal]);
     
     const breadcrumbsArr = [
         {
-            title: 'Categories',
-            url: '/categories'
+            title: "Categories",
+            url: "/categories"
         },
         {
             title: categoryName,

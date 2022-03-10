@@ -1,17 +1,21 @@
 export const URLS = {
     Categories: () => {
-        return 'https://www.themealdb.com/api/json/v1/1/categories.php';
+        return "https://www.themealdb.com/api/json/v1/1/categories.php";
     },
 
     Category: (category) => {
         return `https://www.themealdb.com/api/json/v1/1/filter.php?c=${category}`;
     },
 
-    Recipe: (id) => {
-        return `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`;
+    Recipe: () => {
+        return "https://www.themealdb.com/api/json/v1/1/lookup.php";
     },
 
     Random: () => {
-        return 'www.themealdb.com/api/json/v1/1/random.php';
+        return "https://www.themealdb.com/api/json/v1/1/random.php";
+    },
+
+    Search: (name) => {
+        return `https://www.themealdb.com/api/json/v1/1/search.php?s=${name}`;
     }
 };

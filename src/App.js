@@ -1,6 +1,6 @@
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch } from "react-router-dom";
 import { Layout } from "./layout/Layout/Layout";
-import { Welcome } from './pages/Welcome/Welcome';
+import { Welcome } from "./pages/Welcome/Welcome";
 import { Categories } from "./pages/Categories/Categories";
 import { Category } from "./pages/Category/Category";
 import { RecipeDetail } from "./pages/RecipeDetail/RecipeDetail";

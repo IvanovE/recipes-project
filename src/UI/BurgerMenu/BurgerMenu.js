@@ -1,30 +1,33 @@
-import styles from './BurgerMenu.module.sass';
+import styles from "./BurgerMenu.module.sass";
 import { Link } from "react-router-dom";
 import { Typography } from "../../typography/Typography";
 import { TEXT } from "../../constants/text";
-import { useState } from "react";
-import cn from 'classnames';
+import cn from "classnames";
+import { SearchBar } from "../../components/SearchBar/SearchBar";
 
-export const BurgerMenu = () => {
-    const [isOpened, setIsOpened] = useState(false);
-
-    const toggleMenuHandler = () => {
-        setIsOpened((prevState) => !prevState);
-    };
+export const BurgerMenu = ({ setIsSuggest, isSuggest, isMenuOpened, toggleMenuHandler }) => {
 
     return (
         <>
             <div className={cn({
                 [styles.container]: true,
-                [styles.open]: isOpened
+                [styles.open]: isMenuOpened
             })} onClick={toggleMenuHandler}>
                 <div className={styles.menu} />
             </div>
-            <nav className={styles.nav}>
-                <Link to={'/categories'} onClick={toggleMenuHandler}>
+
+            <nav onClick={() => setIsSuggest(false)} className={styles.nav}>
+                <SearchBar
+                    className={styles.search}
+                    toggleMenuHandler={toggleMenuHandler}
+                    setIsSuggest={setIsSuggest}
+                    isSuggest={isSuggest}
+                    placeholder={"Search..."} />
+
+                <Link to={"/categories"} onClick={toggleMenuHandler}>
                     <Typography.Title>{TEXT.categories}</Typography.Title>
                 </Link>
-                <Link to={'#'} onClick={toggleMenuHandler}>
+                <Link to={"#"} onClick={toggleMenuHandler}>
                     <Typography.Title>{TEXT.randomRecipe}</Typography.Title>
                 </Link>
             </nav>
