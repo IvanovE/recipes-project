@@ -1,11 +1,11 @@
-import styles from './Category.module.sass';
+import styles from "./Category.module.sass";
 import useFetch from "use-http";
 import { useParams } from "react-router-dom";
 import { CategoryCard } from "./components/CategoryCard/CategoryCard";
-import { URLS } from "../../api/urls";
-import { Breadcrumbs } from "../../UI/Breadcrumbs/Breadcrumbs";
+import { URLS } from "api/urls";
+import { Breadcrumbs } from "UI/Breadcrumbs/Breadcrumbs";
 import { CategorySkeleton } from "./components/CategorySkeleton/CategorySkeleton";
-import { Error } from "../../components/Error/Error";
+import { Error } from "components/Error/Error";
 
 export const Category = () => {
     const { categoryName } = useParams();
@@ -17,8 +17,8 @@ export const Category = () => {
 
     const breadcrumbArr = [
         {
-            title: 'Categories',
-            url: `/categories`
+            title: "Categories",
+            url: "/categories"
         },
         {
             title: categoryName,

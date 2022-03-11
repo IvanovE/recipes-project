@@ -1,11 +1,11 @@
-import styles from './Welcome.module.sass';
-import globalStyles from '../../styles/global.module.sass';
-import cooking1 from '../../assets/cooking2.gif';
-import cooking2 from '../../assets/cooking3.gif';
-import cooking3 from '../../assets/cooking1.gif';
-import { Typography } from "../../typography/Typography";
-import { TEXT } from "../../constants/text";
-import cn from 'classnames';
+import styles from "./Welcome.module.sass";
+import globalStyles from "styles/global.module.sass";
+import cooking1 from "assets/cooking2.gif";
+import cooking2 from "assets/cooking3.gif";
+import cooking3 from "assets/cooking1.gif";
+import { Typography } from "typography/Typography";
+import { TEXT } from "constants/text";
+import cn from "classnames";
 
 export const Welcome = () => {
     return (

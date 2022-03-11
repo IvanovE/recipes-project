@@ -1,5 +1,5 @@
-import cn from 'classnames';
-import styles from './Typography.module.sass';
+import cn from "classnames";
+import styles from "./Typography.module.sass";
 
 export const Typography = {
     Title: ({

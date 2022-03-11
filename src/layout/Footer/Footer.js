@@ -1,6 +1,6 @@
-import styles from './Footer.module.sass';
-import { Typography } from "../../typography/Typography";
-import { TEXT } from "../../constants/text";
+import styles from "./Footer.module.sass";
+import { Typography } from "typography/Typography";
+import { TEXT } from "constants/text";
 
 export const Footer = () => {
     return (

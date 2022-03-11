@@ -1,10 +1,10 @@
-import styles from './Categories.module.sass';
-import useFetch from 'use-http';
+import styles from "./Categories.module.sass";
+import useFetch from "use-http";
 import { CategoriesCard } from "./components/CategoriesCard/CategoriesCard";
-import { URLS } from "../../api/urls";
-import { Breadcrumbs } from "../../UI/Breadcrumbs/Breadcrumbs";
+import { URLS } from "api/urls";
+import { Breadcrumbs } from "UI/Breadcrumbs/Breadcrumbs";
 import { CategoriesSkeleton } from "./components/CategoriesSkeleton/CategoriesSkeleton";
-import { Error } from "../../components/Error/Error";
+import { Error } from "components/Error/Error";
 
 export const Categories = () => {
     const { loading, error, data } = useFetch(
@@ -14,8 +14,8 @@ export const Categories = () => {
 
     const breadcrumbs = [
         {
-            title: 'Categories',
-            url: '/categories'
+            title: "Categories",
+            url: "/categories"
         }
     ];
 

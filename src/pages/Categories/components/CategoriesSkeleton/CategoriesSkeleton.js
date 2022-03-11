@@ -1,20 +1,20 @@
 import styles from "../CategoriesCard/CategoriesCard.module.sass";
-import globalStyles from "../../../../styles/global.module.sass";
-import { skeletonDivArray } from "../../../../utils/utils";
+import globalStyles from "styles/global.module.sass";
+import { skeleton } from "utils/utils";
 
 export const CategoriesSkeleton = ({ count }) => {
-    const skeletonArr = [];
+    const arr = [];
     for (let i = 0; i < count; i++) {
-        skeletonArr.push(
+        arr.push(
             <div key={i} className={styles.card}>
                 <div className={styles.header}>
                     <img src="#" alt="" className={globalStyles.skeleton} />
-                    {skeletonDivArray(1)}
+                    {skeleton(1)}
                 </div>
-                {skeletonDivArray(4)}
+                {skeleton(4)}
             </div>
         );
     }
 
-    return skeletonArr;
+    return arr;
 };

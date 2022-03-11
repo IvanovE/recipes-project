@@ -1,7 +1,7 @@
 import styles from "./Layout.module.sass";
-import globalStyles from "../../styles/global.module.sass";
-import { Header } from "../Header/Header";
-import { Footer } from "../Footer/Footer";
+import globalStyles from "styles/global.module.sass";
+import { Header } from "layout/Header/Header";
+import { Footer } from "layout/Footer/Footer";
 import cn from "classnames";
 import { useState } from "react";
 

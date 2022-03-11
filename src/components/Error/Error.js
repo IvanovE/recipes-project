@@ -1,6 +1,6 @@
-import styles from './Error.module.sass';
-import { Typography } from "../../typography/Typography";
-import { TEXT } from "../../constants/text";
+import styles from "./Error.module.sass";
+import { Typography } from "typography/Typography";
+import { TEXT } from "constants/text";
 
 export const Error = () => {
     return (

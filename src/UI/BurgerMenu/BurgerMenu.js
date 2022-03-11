@@ -1,9 +1,9 @@
 import styles from "./BurgerMenu.module.sass";
 import { Link } from "react-router-dom";
-import { Typography } from "../../typography/Typography";
-import { TEXT } from "../../constants/text";
+import { Typography } from "typography/Typography";
+import { TEXT } from "constants/text";
 import cn from "classnames";
-import { SearchBar } from "../../components/SearchBar/SearchBar";
+import { SearchBar } from "components/SearchBar/SearchBar";
 
 export const BurgerMenu = ({ setIsSuggest, isSuggest, isMenuOpened, toggleMenuHandler }) => {
 
@@ -22,7 +22,7 @@ export const BurgerMenu = ({ setIsSuggest, isSuggest, isMenuOpened, toggleMenuHa
                     toggleMenuHandler={toggleMenuHandler}
                     setIsSuggest={setIsSuggest}
                     isSuggest={isSuggest}
-                    placeholder={"Search..."} />
+                    placeholder={TEXT.search} />
 
                 <Link to={"/categories"} onClick={toggleMenuHandler}>
                     <Typography.Title>{TEXT.categories}</Typography.Title>

@@ -6,7 +6,7 @@ export const ScrollToTop = withRouter(({ history, children }) => {
         const unlisten = history.listen(() => {
             window.scrollTo({
                 top: 0,
-                behavior: 'smooth'
+                behavior: "smooth"
             });
         });
         return () => {

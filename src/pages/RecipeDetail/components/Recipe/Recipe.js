@@ -1,7 +1,7 @@
 import styles from "./Recipe.module.sass";
-import { Typography } from "../../../../typography/Typography";
-import { TEXT } from "../../../../constants/text";
-import { transformedVideoUrl, transformIngredients } from "../../../../utils/utils";
+import { Typography } from "typography/Typography";
+import { TEXT } from "constants/text";
+import { transformedVideoUrl, transformIngredients } from "utils/utils";
 
 export const Recipe = ({ data }) => {
     const transformedIngredients = transformIngredients(data);

@@ -1,6 +1,6 @@
 import styles from "../Recipe/Recipe.module.sass";
-import globalStyles from '../../../../styles/global.module.sass';
-import { skeletonDivArray } from "../../../../utils/utils";
+import globalStyles from "styles/global.module.sass";
+import { skeleton } from "utils/utils";
 
 export const RecipeSkeleton = () => {
 
@@ -9,18 +9,18 @@ export const RecipeSkeleton = () => {
             <div className={styles.header}>
                 <img src='#' alt="" className={globalStyles.skeleton} />
                 <div className={styles.marks}>
-                    {skeletonDivArray(4)}
+                    {skeleton(4)}
                 </div>
             </div>
 
             <div className={styles.info}>
                 <div className={styles.ingredients}>
-                    {skeletonDivArray(1, styles.mb)}
-                    {skeletonDivArray(15)}
+                    {skeleton(1, styles.mb)}
+                    {skeleton(15)}
                 </div>
                 <div className={styles.instructions}>
-                    {skeletonDivArray(1, styles.mb)}
-                    {skeletonDivArray(30)}
+                    {skeleton(1, styles.mb)}
+                    {skeleton(30)}
                 </div>
             </div>
         </>

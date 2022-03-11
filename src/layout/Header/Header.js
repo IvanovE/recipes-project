@@ -1,21 +1,24 @@
-import { Link } from "react-router-dom";
-import HouseRecipe from "../../assets/house-recipe.svg";
 import styles from "./Header.module.sass";
-import globalStyles from "../../styles/global.module.sass";
-import { Typography } from "../../typography/Typography";
-import { TEXT } from "../../constants/text";
-import cn from "classnames";
-import { BurgerMenu } from "../../UI/BurgerMenu/BurgerMenu";
+import globalStyles from "styles/global.module.sass";
+import { Link } from "react-router-dom";
+import { BurgerMenu } from "UI/BurgerMenu/BurgerMenu";
 import { useState } from "react";
-import { SearchBar } from "../../components/SearchBar/SearchBar";
+import { SearchBar } from "components/SearchBar/SearchBar";
+import { useMediaQuery } from "hooks/useMediaQuery";
+import HouseRecipe from "assets/house-recipe.svg";
+import { Typography } from "typography/Typography";
+import { TEXT } from "constants/text";
+import { BREAKPOINTS } from "constants/breakpoints";
+import cn from "classnames";
 
-// window.outerWidth < 576 - временная мера
 export const Header = ({ setIsSuggest, isSuggest }) => {
     const [isMenuOpened, setIsMenuOpened] = useState(false);
+    const isMobile = useMediaQuery(`(max-width: ${BREAKPOINTS.xs})`);
 
     const toggleMenuHandler = () => {
         setIsMenuOpened(prevState => !prevState);
     };
+
 
     return (
         <header className={cn(styles.header, globalStyles.header)}>
@@ -23,7 +26,7 @@ export const Header = ({ setIsSuggest, isSuggest }) => {
                 <img className={styles.logo} src={HouseRecipe} alt="House Recipe"/>
             </Link>
 
-            { window.outerWidth < 576 &&
+            { isMobile &&
                 <BurgerMenu
                     setIsSuggest={setIsSuggest}
                     isSuggest={isSuggest}
@@ -31,12 +34,12 @@ export const Header = ({ setIsSuggest, isSuggest }) => {
                     toggleMenuHandler={toggleMenuHandler} />}
 
 
-            { window.outerWidth > 576 &&
+            { !isMobile &&
                 <>
                     <SearchBar
                         setIsSuggest={setIsSuggest}
                         isSuggest={isSuggest}
-                        placeholder={"Search..."} />
+                        placeholder={TEXT.search} />
 
                     <ul className={styles.nav}>
                         <li>

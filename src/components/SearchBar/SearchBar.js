@@ -1,7 +1,7 @@
 import styles from "./SearchBar.module.sass";
 import { useCallback, useState } from "react";
-import { URLS } from "../../api/urls";
-import { Typography } from "../../typography/Typography";
+import { URLS } from "api/urls";
+import { Typography } from "typography/Typography";
 import debounce from "lodash/debounce";
 import { Link } from "react-router-dom";
 import cn from "classnames";

@@ -1,7 +1,7 @@
-import styles from './Breadcrumbs.module.sass';
+import styles from "./Breadcrumbs.module.sass";
 import { Link } from "react-router-dom";
-import { Typography } from "../../typography/Typography";
-import cn from 'classnames';
+import { Typography } from "typography/Typography";
+import cn from "classnames";
 import { Separator } from "./components/Separator";
 
 export const Breadcrumbs = ({ breadcrumbArr, className }) => {

@@ -11,6 +11,10 @@ export const URLS = {
         return "https://www.themealdb.com/api/json/v1/1/lookup.php";
     },
 
+    fetchRecipe: (id) => {
+        return `?i=${id}`;
+    },
+
     Random: () => {
         return "https://www.themealdb.com/api/json/v1/1/random.php";
     },

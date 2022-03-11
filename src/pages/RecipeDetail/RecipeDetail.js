@@ -2,10 +2,10 @@ import styles from "./RecipeDetail.module.sass";
 import useFetch from "use-http";
 import { useParams } from "react-router-dom";
 import { Recipe } from "./components/Recipe/Recipe";
-import { URLS } from "../../api/urls";
-import { Breadcrumbs } from "../../UI/Breadcrumbs/Breadcrumbs";
+import { URLS } from "api/urls";
+import { Breadcrumbs } from "UI/Breadcrumbs/Breadcrumbs";
 import { RecipeSkeleton } from "./components/RecipeSkeleton/RecipeSkeleton";
-import { Error } from "../../components/Error/Error";
+import { Error } from "components/Error/Error";
 import { useEffect, useState } from "react";
 
 export const RecipeDetail = () => {
@@ -20,7 +20,7 @@ export const RecipeDetail = () => {
 
     useEffect(() => {
         (async function fetchData() {
-            const fetchedData = await get(`?i=${idMeal}`);
+            const fetchedData = await get(URLS.fetchRecipe(idMeal));
             const transformedData = fetchedData.meals[0];
             if (response.ok) {
                 setData(transformedData);
