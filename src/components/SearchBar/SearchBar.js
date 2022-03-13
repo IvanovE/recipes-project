@@ -6,7 +6,13 @@ import debounce from "lodash/debounce";
 import { Link } from "react-router-dom";
 import cn from "classnames";
 
-export const SearchBar = ({ toggleMenuHandler = null, setIsSuggest, isSuggest, placeholder, className }) => {
+export const SearchBar = ({
+    toggleMenuHandler = null,
+    setIsSuggest,
+    isSuggest,
+    placeholder,
+    className
+}) => {
     const [input, setInput] = useState("");
     const [data, setData] = useState([]);
 
@@ -20,7 +26,7 @@ export const SearchBar = ({ toggleMenuHandler = null, setIsSuggest, isSuggest, p
 
     const onInput = (event) => {
         const { value } = event.target;
-        if (value.trim() === "") {
+        if (!value.trim()) {
             setInput(value);
             setData([]);
             setIsSuggest(false);
@@ -38,10 +44,12 @@ export const SearchBar = ({ toggleMenuHandler = null, setIsSuggest, isSuggest, p
 
     const showSuggest = (event) => {
         event.stopPropagation();
-        if (input.trim() !== "") {
-            debouncedFetchSuggestItems(input);
-            setIsSuggest(true);
+        if (input.trim() === "") {
+            setData([]);
+            return;
         }
+        debouncedFetchSuggestItems(input);
+        setIsSuggest(true);
     };
 
 

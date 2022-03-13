@@ -42,10 +42,8 @@
   cursor: pointer
   transition: 0.3s ease
   width: 100%
-
   &:hover
     background-color: $hover-color
-
   & img
     width: 10%
     height: 10%
@@ -55,13 +53,11 @@
   text-align: center
   padding: 2rem
 
-@media (max-width: 576px)
+@media (max-width: $width-xs)
   .search
     flex-grow: 0
-
   .suggestions
     top: 3rem
     max-height: 40vh
-
     a
       margin-bottom: 0

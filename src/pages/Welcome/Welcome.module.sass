@@ -27,13 +27,11 @@
   justify-content: space-between
   text-align: center
   border-top: $border
-
-.section:last-child
-  border-bottom: 0
-
-.section img
-  width: 48%
-  border-radius: 0.4rem
+  &:last-child
+    border-bottom: 0
+  img
+    width: 48%
+    border-radius: 0.4rem
 
 .text
   padding: 0 2rem 0 0
@@ -45,11 +43,11 @@
   padding: 0 0 0 2rem
 
 
-@media (max-width: 992px)
+@media (max-width: $width-md)
   .container
     margin: -2rem -4rem
 
-@media (max-width: 768px)
+@media (max-width: $width-sm)
   .container
     margin: -2rem
 
@@ -59,7 +57,6 @@
   .section
     display: block
     padding: 2rem
-
     img
       display: block
       margin: 0 auto
@@ -71,7 +68,7 @@
   .text
     margin-bottom: 2rem
 
-@media (max-width: 576px)
+@media (max-width: $width-xs)
   .img
     height: 86vh
 

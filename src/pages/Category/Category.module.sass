@@ -9,18 +9,18 @@
   margin-bottom: $breadcrumbs-mb-lg
 
 
-@media (max-width: 1200px)
+@media (max-width: $width-lg)
   .container
     grid-template-columns: repeat(auto-fill, minmax(400px, 1fr))
 
-@media (max-width: 992px)
+@media (max-width: $width-md)
   .container
     grid-template-columns: repeat(2, 1fr)
 
-@media (max-width: 768px)
+@media (max-width: $width-sm)
   .container
     grid-template-columns: repeat(1, 1fr)
 
-@media (max-width: 576px)
+@media (max-width: $width-xs)
   .breadcrumbs
     margin-bottom: $breadcrumbs-mb-xs

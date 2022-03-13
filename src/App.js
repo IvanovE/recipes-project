@@ -24,6 +24,9 @@ function App() {
                     <Route exact path={"/categories/:categoryName/:idMeal"}>
                         <RecipeDetail />
                     </Route>
+                    <Route exact path={"/random"}>
+                        <RecipeDetail />
+                    </Route>
                     <Route path={"*"}>
                         <NotFound />
                     </Route>

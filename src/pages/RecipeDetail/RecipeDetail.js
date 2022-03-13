@@ -29,7 +29,7 @@ export const RecipeDetail = () => {
         })();
     }, [idMeal]);
     
-    const breadcrumbsArr = [
+    const breadcrumbs = [
         {
             title: "Categories",
             url: "/categories"
@@ -46,7 +46,7 @@ export const RecipeDetail = () => {
 
     return (
         <>
-            <Breadcrumbs breadcrumbArr={breadcrumbsArr} className={styles.breadcrumbs} />
+            <Breadcrumbs breadcrumbArr={breadcrumbs} className={styles.breadcrumbs} />
 
             {loading && <RecipeSkeleton />}
 

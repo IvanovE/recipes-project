@@ -15,7 +15,7 @@ export const Category = () => {
         {},
         []);
 
-    const breadcrumbArr = [
+    const breadcrumbs = [
         {
             title: "Categories",
             url: "/categories"
@@ -28,7 +28,7 @@ export const Category = () => {
 
     return (
         <>
-            <Breadcrumbs breadcrumbArr={breadcrumbArr} className={styles.breadcrumbs} />
+            <Breadcrumbs breadcrumbArr={breadcrumbs} className={styles.breadcrumbs} />
             {loading &&
                 <div className={styles.container}>
                     <CategorySkeleton count={30} />
