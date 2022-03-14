@@ -1,11 +1,12 @@
 import { Route, Switch } from "react-router-dom";
-import { Layout } from "./layout/Layout/Layout";
-import { Welcome } from "./pages/Welcome/Welcome";
-import { Categories } from "./pages/Categories/Categories";
-import { Category } from "./pages/Category/Category";
-import { RecipeDetail } from "./pages/RecipeDetail/RecipeDetail";
-import { NotFound } from "./components/NotFound/NotFound";
-import { ScrollToTop } from "./layout/ScrollToTop";
+import { Layout } from "layout/Layout/Layout";
+import { Welcome } from "pages/Welcome/Welcome";
+import { Categories } from "pages/Categories/Categories";
+import { Category } from "pages/Category/Category";
+import { RecipeDetail } from "pages/RecipeDetail/RecipeDetail";
+import { NotFound } from "components/NotFound/NotFound";
+import { ScrollToTop } from "layout/ScrollToTop";
+import { RandomRecipe } from "pages/RandomRecipe/RandomRecipe";
 
 function App() {
     return (
@@ -25,7 +26,7 @@ function App() {
                         <RecipeDetail />
                     </Route>
                     <Route exact path={"/random"}>
-                        <RecipeDetail />
+                        <RandomRecipe />
                     </Route>
                     <Route path={"*"}>
                         <NotFound />

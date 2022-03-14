@@ -11,7 +11,7 @@ export const URLS = {
         return "https://www.themealdb.com/api/json/v1/1/lookup.php";
     },
 
-    fetchRecipe: (id) => {
+    RecipeId: (id) => {
         return `?i=${id}`;
     },
 

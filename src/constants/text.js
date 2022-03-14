@@ -20,5 +20,7 @@ export const TEXT = {
     error: "Something went wrong! Sorry for that, try again later!",
     404: "404",
     notFound: "This page does not exist!",
-    search: "Search..."
+    search: "Search...",
+    home: "Home",
+    copyLink: "Copy Link"
 };

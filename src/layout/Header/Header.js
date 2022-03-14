@@ -39,20 +39,17 @@ export const Header = ({ setIsSuggest, isSuggest }) => {
                     <SearchBar
                         setIsSuggest={setIsSuggest}
                         isSuggest={isSuggest}
-                        placeholder={TEXT.search} />
+                        placeholder={TEXT.search}
+                        className={styles.search} />
 
-                    <ul className={styles.nav}>
-                        <li>
-                            <Link to={"/categories"}>
-                                <Typography.Regular className={styles.link}>{TEXT.categories}</Typography.Regular>
-                            </Link>
-                        </li>
-                        <li className={styles.btn}>
-                            <Link to={"#"}>
-                                <Typography.Regular>{TEXT.randomRecipe}</Typography.Regular>
-                            </Link>
-                        </li>
-                    </ul>
+                    <div className={styles.nav}>
+                        <Link to={"/categories"} className={styles.link}>
+                            <Typography.Regular className={styles.categories}>{TEXT.categories}</Typography.Regular>
+                        </Link>
+                        <Link to={"/random"} className={cn(styles.btn, styles.link)} >
+                            <Typography.Regular>{TEXT.randomRecipe}</Typography.Regular>
+                        </Link>
+                    </div>
                 </>
             }
         </header>

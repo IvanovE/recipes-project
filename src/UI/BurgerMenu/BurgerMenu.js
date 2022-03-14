@@ -27,7 +27,7 @@ export const BurgerMenu = ({ setIsSuggest, isSuggest, isMenuOpened, toggleMenuHa
                 <Link to={"/categories"} onClick={toggleMenuHandler}>
                     <Typography.Title>{TEXT.categories}</Typography.Title>
                 </Link>
-                <Link to={"#"} onClick={toggleMenuHandler}>
+                <Link to={"/random"} onClick={toggleMenuHandler}>
                     <Typography.Title>{TEXT.randomRecipe}</Typography.Title>
                 </Link>
             </nav>
