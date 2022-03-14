@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/recipes-project/static/css/main.11088f64.css",
-    "main.js": "/recipes-project/static/js/main.832bc956.js",
-    "static/js/787.5781fa6f.chunk.js": "/recipes-project/static/js/787.5781fa6f.chunk.js",
+    "main.css": "/recipes-project/static/css/main.f2d4b29c.css",
+    "main.js": "/recipes-project/static/js/main.257df5ad.js",
+    "static/js/787.eeb3b559.chunk.js": "/recipes-project/static/js/787.eeb3b559.chunk.js",
     "static/media/welcome-image.jpg": "/recipes-project/static/media/welcome-image.b0c1718fb72e2f15a707.jpg",
     "static/media/cooking3.gif": "/recipes-project/static/media/cooking3.c0af03318d4cc28db58d.gif",
     "static/media/cooking2.gif": "/recipes-project/static/media/cooking2.7181d55a2258fcef51c4.gif",
     "static/media/cooking1.gif": "/recipes-project/static/media/cooking1.46116ebff7d4297e98c4.gif",
     "static/media/house-recipe.svg": "/recipes-project/static/media/house-recipe.7843c4f06c6e7d742e8fa3649d7f0c2d.svg",
     "index.html": "/recipes-project/index.html",
-    "main.11088f64.css.map": "/recipes-project/static/css/main.11088f64.css.map",
-    "main.832bc956.js.map": "/recipes-project/static/js/main.832bc956.js.map",
-    "787.5781fa6f.chunk.js.map": "/recipes-project/static/js/787.5781fa6f.chunk.js.map"
+    "main.f2d4b29c.css.map": "/recipes-project/static/css/main.f2d4b29c.css.map",
+    "main.257df5ad.js.map": "/recipes-project/static/js/main.257df5ad.js.map",
+    "787.eeb3b559.chunk.js.map": "/recipes-project/static/js/787.eeb3b559.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.11088f64.css",
-    "static/js/main.832bc956.js"
+    "static/css/main.f2d4b29c.css",
+    "static/js/main.257df5ad.js"
   ]
 }
